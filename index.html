@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{ 
+            background: #000; 
+            height: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .volume{
+            width: 1024px;
+            height: 576px;
+        }
+
+        .volume #music{
+            width: 40px;
+            position: relative;
+            left: calc(100% - 50px);
+            top: 60px;
+            border-radius: 0%;
+            cursor: pointer;
+            opacity : 0; transition: opacity 2s;
+        }
+
+        .volume #music:hover{
+            opacity : 1; transition: opacity 1s;
+        }
+
+        .shake{
+            animation: shake 150ms 1 linear;
+        }
+
+        .shakee {
+            animation: shakee 150ms 1 linear;
+        }
+
+        @keyframes shake {
+		  0% {
+		    transform: translate(3px, 0);
+		  }
+		  50% {
+		    transform: translate(-3px, 0);
+		  }
+		  100% {
+		    transform: translate(0, 0);
+		  }
+        }
+
+        @keyframes shakee {
+		  0% {
+		    transform: translate(3px, 0);
+		  }
+		  50% {
+		    transform: translate(-3px, 0);
+		  }
+		  100% {
+		    transform: translate(0, 0);
+		  }
+        }
+
+
+    </style>
+    
+</head>
+<body>
+    
+    <div class="volume">
+        <img onclick="changeImage()" id="music" src="img/svg/sound-svgrepo-com.svg" alt="">
+        <audio id="audio" src="./sounds/music2.mp3" autoplay="autoplay" loop="loop" volume="0.3"></audio>
+        <canvas id="canva" class="shake"></canvas>
+    </div>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/ultils.js"></script>
+    <script src="js/data/collisions.js"></script>
+    <script src="js/classes/CollisionBlock.js"></script>
+    <script src="js/classes/Sprite.js"></script>
+    <script src="js/classes/Player.js"></script>
+    <script src="js/eventListeners.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
